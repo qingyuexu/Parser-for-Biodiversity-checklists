@@ -9,6 +9,8 @@ getSpecies<-function(input_url,output_file){
     read_html() %>% 
     html_nodes(".SN li:nth-child(1) > i:nth-child(1)") %>% 
     html_text()
+  write.csv(species_name,file=output_file)
+  print(species_name)
 
 }
 

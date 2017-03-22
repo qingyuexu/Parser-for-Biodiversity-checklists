@@ -22,9 +22,14 @@ for (i in headerline:length(index)) {
 
 
 # Check if the number of species is correct and then output the result
+output <- file("SpeciesNameOut_Easy.csv")
 number_line <- grep(".*?Species list: .*", web_line)
 number <-
   as.integer(str_extract(web_line[number_line], "[[:blank:]]+[0-9]+"))
-if(length(species) == number){
-  species
+if (length(species) == number) {
+  species<-as.character(species)
+  write.csv(species,file="SpeciesNameOut_Easy.csv")
+  # for (i in 1:length(species)) {
+  #   write(c(i, species[[i]][1]), file = "SpeciesNameOut_Easy.csv", append = TRUE)
+  # }
 }

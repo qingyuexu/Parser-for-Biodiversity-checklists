@@ -29,7 +29,4 @@ number <-
 if (length(species) == number) {
   species<-as.character(species)
   write.csv(species,file="SpeciesNameOut_Easy.csv")
-  # for (i in 1:length(species)) {
-  #   write(c(i, species[[i]][1]), file = "SpeciesNameOut_Easy.csv", append = TRUE)
-  # }
 }
